@@ -16,8 +16,6 @@ namespace Plugin.Bluetooth.Abstractions
 
         Task Connect();
 
-        Task Connect(int port);
-
         Task Disconnect();
 
         Task Write(string message);

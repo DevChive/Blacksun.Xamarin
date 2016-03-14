@@ -18,7 +18,7 @@
             <Button Content="Check bluetooth" Click="Button_Click" HorizontalAlignment="Stretch" Margin="0"/>
             <TextBlock x:Name="IsOnLabel" HorizontalAlignment="Center" Margin="0" Grid.Row="1"/>
             <Button Content="Get paired devices" Click="Button_PairedDevicesClick" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2"/>
-            <ListView x:Name="listView" Margin="0" Grid.Row="3">
+            <ListView x:Name="listView" Margin="0" Grid.Row="3" SelectionChanged="ListView_OnSelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Padding="10">
@@ -30,5 +30,6 @@
             </ListView>
 
         </Grid>
+        <ProgressRing x:Name="progressRing" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" d:IsHidden="True"/>
     </Grid>
 </Page>

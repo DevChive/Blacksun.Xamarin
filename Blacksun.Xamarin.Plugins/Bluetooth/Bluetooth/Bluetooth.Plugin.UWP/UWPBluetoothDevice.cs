@@ -8,6 +8,7 @@ using Windows.Devices.Enumeration;
 using Windows.Networking.Proximity;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
+using WindowsBluetooth;
 using Plugin.Bluetooth.Abstractions;
 using Plugin.Bluetooth.Abstractions.Exceptions;
 
@@ -27,7 +28,7 @@ namespace Bluetooth.Plugin.UWP
 
         private Guid CurrentUniqueIdentifier { get; set; }
 
-        StreamSocket Socket { get; set; }
+        StreamSocket _socket { get; set; }
 
         public DeviceInformation BluetoothDevice { get; set; }
 
@@ -49,11 +50,6 @@ namespace Bluetooth.Plugin.UWP
             set { _isConnected = value; }
         }
 
-
-        public UWPBluetoothDevice()
-        {
-            Socket = new StreamSocket();
-        }
 
         public bool ContainsUniqueIdentifier(string uniqueIdentifier)
         {
@@ -77,55 +73,59 @@ namespace Bluetooth.Plugin.UWP
 
         public async Task Connect()
         {
-            await Connect(1);
-        }
+            var tcs = new TaskCompletionSource<bool>();
 
-        public async Task Connect(int port)
-        {
-            
             try
             {
+                _socket = new StreamSocket();
                 _service = await RfcommDeviceService.FromIdAsync(BluetoothDevice.Id);
-                Socket = new StreamSocket();
-                await Socket.ConnectAsync(_service.ConnectionHostName,_service.ConnectionServiceName);
-                dataReader = new DataReader(Socket.InputStream);
-                dataWriter = new DataWriter(Socket.OutputStream);
+                await _socket.ConnectAsync(_service.ConnectionHostName, _service.ConnectionServiceName);
+                dataReader = new DataReader(_socket.InputStream);
+                dataWriter = new DataWriter(_socket.OutputStream);
                 IsConnected = true;
+
             }
             catch (Exception ex)
             {
-                IsConnected = false;
-                throw new BluetoothDeviceNotFoundException("Couldnt find " + Name);
+                Disconnect();
+                throw new BluetoothDeviceNotFoundException("Couldnt connect to " + Name);
             }
-            
+
+
         }
+
 
         public async Task Disconnect()
         {
-            Socket.Dispose();
-            dataReader = null;
-            dataWriter = null;
 
-            await Task.Delay(2000);
+            try
+            {
+                await _socket.CancelIOAsync();
+                _socket.Dispose();
+                _socket = null;
+                _service.Dispose();
+                _service = null;
+                
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            IsConnected = false;
 
         }
 
         public async Task Write(string message)
         {
-            uint sentCommandSize = 0;
-
-            uint commandSize = dataWriter.MeasureString(message);
-            dataWriter.WriteByte((byte)commandSize);
-            sentCommandSize = dataWriter.WriteString(message);
+            dataWriter.WriteString(message);
             await dataWriter.StoreAsync();
+
         }
 
         public async Task Write(byte[] bytes)
         {
-
-            var str = System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length);
-
-            await Write(str);
+            dataWriter.WriteBytes(bytes);
+            await dataWriter.StoreAsync();
 
         }
     }

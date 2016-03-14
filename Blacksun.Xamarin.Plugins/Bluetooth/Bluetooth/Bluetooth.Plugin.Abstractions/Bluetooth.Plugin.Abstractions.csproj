@@ -37,12 +37,14 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Args\DeviceFoundEventArgs.cs" />
     <Compile Include="BaseBluetooth.cs" />
     <Compile Include="Exceptions\BluetoothDeviceNotFoundException.cs" />
     <Compile Include="Exceptions\BluetoothMissingIDException.cs" />
     <Compile Include="Exceptions\BluetoothPermissionException.cs" />
     <Compile Include="IBluetoothDevice.cs" />
     <Compile Include="ICrossBluetooth.cs" />
+    <Compile Include="IPairableBluetoothDevice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

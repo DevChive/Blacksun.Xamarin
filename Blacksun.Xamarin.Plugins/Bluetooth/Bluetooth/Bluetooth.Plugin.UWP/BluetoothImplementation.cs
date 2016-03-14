@@ -14,11 +14,6 @@ namespace Plugin.Bluetooth
     public class BluetoothImplementation : BaseBluetooth
     {
 
-        public BluetoothImplementation()
-        {
-
-        }
-
         public override bool IsAvailable
         {
             get
@@ -59,9 +54,9 @@ namespace Plugin.Bluetooth
             foreach (var deviceInfo in DeviceInfoCollection)
             {
 
-                var _service = await RfcommDeviceService.FromIdAsync(deviceInfo.Id);
+                //var _service = await RfcommDeviceService.FromIdAsync(deviceInfo.Id);
 
-                var device = new UWPBluetoothDevice() { Name = deviceInfo.Name, Address = _service.ConnectionHostName.CanonicalName };
+                var device = new UWPBluetoothDevice() { Name = deviceInfo.Name, Address = string.Empty };
 
                 device.BluetoothDevice = deviceInfo;
 
@@ -78,7 +73,6 @@ namespace Plugin.Bluetooth
                     var guid = Guid.Parse(id);
                     device.UniqueIdentifiers.Add(guid);
                 }
-
 
                 devices.Add(device);
                 
