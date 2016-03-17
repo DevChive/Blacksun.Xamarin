@@ -21,9 +21,6 @@
     <AppxPackagedFile Include="C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\TestApps\BluetoothTest.UWP\bin\x86\Debug\BluetoothTest.UWP.exe">
       <PackagePath>entrypoint\BluetoothTest.UWP.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\angel\.nuget\packages\BluetoothManager\1.0.1\lib\.NETCore50\BluetoothManager.dll">
-      <PackagePath>BluetoothManager.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\angel\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -333,7 +330,7 @@
     <AppxPackagedFile Include="C:\Users\angel\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\bin\x86\Debug\Bluetooth.Plugin.UWP.dll">
+    <AppxPackagedFile Include="C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\bin\Debug\Bluetooth.Plugin.UWP.dll">
       <PackagePath>Bluetooth.Plugin.UWP.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Abstractions\bin\Debug\Plugin.Bluetooth.Abstractions.dll">

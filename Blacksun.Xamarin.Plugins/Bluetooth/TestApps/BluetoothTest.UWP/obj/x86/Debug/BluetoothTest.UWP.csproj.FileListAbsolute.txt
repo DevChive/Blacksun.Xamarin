@@ -196,4 +196,3 @@ C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Blueto
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\TestApps\BluetoothTest.UWP\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\TestApps\BluetoothTest.UWP\bin\x86\Debug\Plugin.Bluetooth.Abstractions.dll
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\TestApps\BluetoothTest.UWP\bin\x86\Debug\Plugin.Bluetooth.Abstractions.pdb
-C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\TestApps\BluetoothTest.UWP\bin\x86\Debug\BluetoothManager.dll

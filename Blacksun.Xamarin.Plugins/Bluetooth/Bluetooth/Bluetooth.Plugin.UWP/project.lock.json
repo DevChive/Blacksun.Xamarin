@@ -3,14 +3,6 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -1546,14 +1538,6 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -3179,14 +3163,6 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -4784,14 +4760,6 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -6422,14 +6390,6 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -8027,14 +7987,6 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -9665,14 +9617,6 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
-      "BluetoothManager/1.0.1": {
-        "compile": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        },
-        "runtime": {
-          "lib/.NETCore50/BluetoothManager.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -11271,18 +11215,6 @@
     }
   },
   "libraries": {
-    "BluetoothManager/1.0.1": {
-      "sha512": "bRcyfrtj/E71sExZrW5fxPqK+3q9VTXGcLEnBjyjAW1JSTaybiaXuAvc24nkTVNKIyoVobp8pTAEBLESe9uu5g==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "BluetoothManager.nuspec",
-        "content/Properties/BluetoothManager.rd.xml",
-        "lib/.NETCore50/BluetoothManager.dll",
-        "package/services/metadata/core-properties/e0d491080c9d420ab066fc949ead4369.psmdcp"
-      ]
-    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "Package",
@@ -14634,7 +14566,6 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "BluetoothManager >= 1.0.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0"
     ],
     "UAP,Version=v10.0": []

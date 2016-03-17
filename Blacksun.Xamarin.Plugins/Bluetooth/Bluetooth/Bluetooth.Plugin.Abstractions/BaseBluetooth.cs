@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Plugin.Bluetooth.Abstractions
 {
-    public abstract class BaseBluetooth : ICrossBluetooth, IDisposable
+    public abstract class BaseBluetooth : IBluetooth, IDisposable
     {
         public abstract bool IsAvailable
         {

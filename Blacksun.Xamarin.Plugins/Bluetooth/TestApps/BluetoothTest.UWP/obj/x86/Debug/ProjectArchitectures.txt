@@ -1,4 +1,4 @@
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Abstractions\Bluetooth.Plugin.Abstractions.csproj;neutral
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Abstractions\Bluetooth.Plugin.Abstractions.csproj;neutral
-C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\Bluetooth.Plugin.UWP.csproj;x86
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\Bluetooth.Plugin.UWP.csproj;neutral
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\TestApps\BluetoothTest.UWP\BluetoothTest.UWP.csproj;x86

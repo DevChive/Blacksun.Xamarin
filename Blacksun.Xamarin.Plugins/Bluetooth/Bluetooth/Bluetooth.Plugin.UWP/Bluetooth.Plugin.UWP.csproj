@@ -121,6 +121,10 @@
       <Project>{e1663930-0661-44d2-aeec-8ec43734e637}</Project>
       <Name>Bluetooth.Plugin.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Bluetooth.Plugin\Bluetooth.Plugin.csproj">
+      <Project>{31ccbdd1-dc47-4e0c-9745-f487f6204774}</Project>
+      <Name>Bluetooth.Plugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -5,12 +5,12 @@ namespace Plugin.Bluetooth
 {
     public class CrossBluetooth
     {
-        static Lazy<ICrossBluetooth> Implementation = new Lazy<ICrossBluetooth>(() => CreateBluetooth(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+        static Lazy<IBluetooth> Implementation = new Lazy<IBluetooth>(() => CreateBluetooth(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// Current settings to use
         /// </summary>
-        public static ICrossBluetooth Current
+        public static IBluetooth Current
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Plugin.Bluetooth
             }
         }
 
-        static ICrossBluetooth CreateBluetooth()
+        static IBluetooth CreateBluetooth()
         {
 #if PORTABLE
             return null;
@@ -47,7 +47,7 @@ namespace Plugin.Bluetooth
             {
                 Implementation.Value.Dispose();
 
-                Implementation = new Lazy<ICrossBluetooth>(() => CreateBluetooth(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+                Implementation = new Lazy<IBluetooth>(() => CreateBluetooth(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
             }
         }
     }

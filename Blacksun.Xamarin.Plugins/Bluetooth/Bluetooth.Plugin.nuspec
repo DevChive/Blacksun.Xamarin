@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata minClientVersion="2.8.1">
+       <id>Blacksun.Xamarin.Plugin.Bluetooth</id>
+       <version>0.1.1.1</version>
+       <title>Bluetooth Plugin for Xamarin and Windows</title>
+       <authors>Angel Calvas</authors>
+       <owners>Angel Calvas</owners>
+       <licenseUrl>https://github.com/angelcalvasp/Blacksun.Xamarin/blob/master/LICENSE.md</licenseUrl>
+       <projectUrl>https://github.com/angelcalvasp/Blacksun.Xamarin/tree/master/Blacksun.Xamarin.Plugins/Bluetooth</projectUrl>
+       <iconUrl>http://www.refractored.com/images/Bluetooth_icon.png</iconUrl>
+       <requireLicenseAcceptance>false</requireLicenseAcceptance>
+       <description>
+         Simple bluetooth plugin for Xamarin Forms.
+       </description>
+     <releaseNotes>
+     </releaseNotes>
+       <summary>Use Bluetooth.</summary>
+       <tags>xamarin, pcl, xam.pcl, bluetooth, plugin for xamarin, plugins, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+       <dependencies>
+       </dependencies>
+   </metadata>
+   <files> 
+     <!--Core-->
+     <file src="Bluetooth\Bluetooth.Plugin\bin\Release\Plugin.Bluetooth.dll" target="lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Bluetooth.dll" />
+     <file src="Bluetooth\Bluetooth.Plugin\bin\Release\Plugin.Bluetooth.xml" target="lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Bluetooth.xml" />
+     <file src="Bluetooth\Bluetooth.Plugin\bin\Release\Plugin.Bluetooth.pdb" target="lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Bluetooth.pdb" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.dll" target="lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Bluetooth.Abstractions.dll" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.xml" target="lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Bluetooth.Abstractions.xml" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.pdb" target="lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Bluetooth.Abstractions.pdb" />
+
+     <!--Xamarin.Android-->
+     <file src="Bluetooth\Bluetooth.Plugin.Android\bin\Release\Plugin.Bluetooth.dll" target="lib\MonoAndroid10\Plugin.Bluetooth.dll" />
+     <file src="Bluetooth\Bluetooth.Plugin.Android\bin\Release\Plugin.Bluetooth.xml" target="lib\MonoAndroid10\Plugin.Bluetooth.xml" />
+     <file src="Bluetooth\Bluetooth.Plugin.Android\bin\Release\Plugin.Bluetooth.pdb" target="lib\MonoAndroid10\Plugin.Bluetooth.pdb" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.dll" target="lib\MonoAndroid10\Plugin.Bluetooth.Abstractions.dll" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.xml" target="lib\MonoAndroid10\Plugin.Bluetooth.Abstractions.xml" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.pdb" target="lib\MonoAndroid10\Plugin.Bluetooth.Abstractions.pdb" />
+
+     <!--UWP-->
+     <file src="Bluetooth\Bluetooth.Plugin.UWP\bin\Release\Plugin.Bluetooth.dll" target="lib\UAP10\Plugin.Bluetooth.dll" />
+     <file src="Bluetooth\Bluetooth.Plugin.UWP\bin\Release\Plugin.Bluetooth.xml" target="lib\UAP10\Plugin.Bluetooth.xml" />
+     <file src="Bluetooth\Bluetooth.Plugin.UWP\bin\Release\Plugin.Bluetooth.pdb" target="lib\UAP10\Plugin.Bluetooth.pdb" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.dll" target="lib\UAP10\Plugin.Bluetooth.Abstractions.dll" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.xml" target="lib\UAP10\Plugin.Bluetooth.Abstractions.xml" />
+     <file src="Bluetooth\Bluetooth.Plugin.Abstractions\bin\Release\Plugin.Bluetooth.Abstractions.pdb" target="lib\UAP10\Plugin.Bluetooth.Abstractions.pdb" />
+
+   </files>
+</package>
