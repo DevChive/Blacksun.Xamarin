@@ -30,6 +30,5 @@
             </ListView>
 
         </Grid>
-        <ProgressRing x:Name="progressRing" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" d:IsHidden="True"/>
     </Grid>
 </Page>

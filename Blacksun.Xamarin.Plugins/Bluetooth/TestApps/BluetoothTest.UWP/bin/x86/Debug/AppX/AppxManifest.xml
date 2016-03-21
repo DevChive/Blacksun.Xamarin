@@ -33,7 +33,11 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <DeviceCapability Name="proximity" />
-    <DeviceCapability Name="bluetooth" />
+    <DeviceCapability Name="bluetooth.rfcomm">
+      <Device Id="any">
+        <Function Type="name:serialPort" />
+      </Device>
+    </DeviceCapability>
   </Capabilities>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />

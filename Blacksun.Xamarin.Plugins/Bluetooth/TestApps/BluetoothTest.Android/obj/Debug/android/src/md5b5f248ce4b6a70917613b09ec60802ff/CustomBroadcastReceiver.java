@@ -1,4 +1,4 @@
-package md51fde97a794995afe24b65150de796563;
+package md5b5f248ce4b6a70917613b09ec60802ff;
 
 
 public class CustomBroadcastReceiver
@@ -11,7 +11,7 @@ public class CustomBroadcastReceiver
 		__md_methods = 
 			"n_onReceive:(Landroid/content/Context;Landroid/content/Intent;)V:GetOnReceive_Landroid_content_Context_Landroid_content_Intent_Handler\n" +
 			"";
-		mono.android.Runtime.register ("Bluetooth.Plugin.Android.CustomBroadcastReceiver, Bluetooth.Plugin.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", CustomBroadcastReceiver.class, __md_methods);
+		mono.android.Runtime.register ("Bluetooth.Plugin.Android.CustomBroadcastReceiver, Bluetooth.Plugin.Android, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null", CustomBroadcastReceiver.class, __md_methods);
 	}
 
 
@@ -19,7 +19,7 @@ public class CustomBroadcastReceiver
 	{
 		super ();
 		if (getClass () == CustomBroadcastReceiver.class)
-			mono.android.TypeManager.Activate ("Bluetooth.Plugin.Android.CustomBroadcastReceiver, Bluetooth.Plugin.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("Bluetooth.Plugin.Android.CustomBroadcastReceiver, Bluetooth.Plugin.Android, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

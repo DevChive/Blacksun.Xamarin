@@ -14,6 +14,7 @@ using Java.IO;
 using Java.Lang;
 using Plugin.Bluetooth.Abstractions.Exceptions;
 using Exception = System.Exception;
+using Java.Util;
 
 namespace Bluetooth.Plugin.Android
 {
@@ -23,15 +24,14 @@ namespace Bluetooth.Plugin.Android
         public BluetoothSocket mmSocket;
         private BluetoothDevice Device;
         private BluetoothAdapter mBluetoothAdapter;
-        private int Port;
+        private int Port = 1;
 
-        public ConnectThread(BluetoothDevice device, int port)
+        public ConnectThread(BluetoothDevice device)
         {
             // Use a temporary object that is later assigned to mmSocket,
             // because mmSocket is final
             BluetoothSocket tmp = null;
             Device = device;
-            Port = port;
             mBluetoothAdapter = BluetoothAdapter.DefaultAdapter;
             if (mBluetoothAdapter == null)
             {
@@ -80,80 +80,78 @@ namespace Bluetooth.Plugin.Android
             parcelUuids = Device.GetUuids();
             bool isConnected = false;
 
+
+
             if (parcelUuids == null)
             {
-                throw new System.Exception("No Unique Identifiers found");
+                parcelUuids = new ParcelUuid[1];
+                parcelUuids[0] = new ParcelUuid(UUID.FromString("00001101-0000-1000-8000-00805f9b34fb"));
             }
-            else
+
+            foreach (var parcelUuid in parcelUuids)
             {
+                mBluetoothAdapter.CancelDiscovery();
+                //METHOD A
 
-
-                foreach (var parcelUuid in parcelUuids)
+                try
                 {
-                    mBluetoothAdapter.CancelDiscovery();
-                    //METHOD A
-
-                    try
-                    {
-                        var method = Device.GetType().GetMethod("createRfcommSocket");
-                        mmSocket = (BluetoothSocket)method.Invoke(Device, new object[] { Port });
-                        mmSocket.Connect();
-                        isConnected = true;
-                        DoDeviceConnected();
-                        break;
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-
-                    //METHOD B
-
-                    try
-                    {
-                        var method = Device.GetType().GetMethod("createInsecureRfcommSocket");
-                        mmSocket = (BluetoothSocket)method.Invoke(Device, new object[] { Port });
-                        mmSocket.Connect();
-                        isConnected = true;
-                        DoDeviceConnected();
-                        break;
-                    }
-                    catch (Exception)
-                    {
-
-                    }
+                    var method = Device.GetType().GetMethod("createRfcommSocket");
+                    mmSocket = (BluetoothSocket)method.Invoke(Device, new object[] { Port });
+                    mmSocket.Connect();
+                    isConnected = true;
+                    DoDeviceConnected();
+                    break;
+                }
+                catch (Exception)
+                {
 
                 }
 
-                if (!isConnected)
+                //METHOD B
+
+                try
                 {
-                    //METHOD C
+                    var method = Device.GetType().GetMethod("createInsecureRfcommSocket");
+                    mmSocket = (BluetoothSocket)method.Invoke(Device, new object[] { Port });
+                    mmSocket.Connect();
+                    isConnected = true;
+                    DoDeviceConnected();
+                    break;
+                }
+                catch (Exception)
+                {
 
-                    try
-                    {
-                        IntPtr createRfcommSocket = JNIEnv.GetMethodID(Device.Class.Handle, "createRfcommSocket", "(I)Landroid/bluetooth/BluetoothSocket;");
-                        IntPtr _socket = JNIEnv.CallObjectMethod(Device.Handle, createRfcommSocket, new global::Android.Runtime.JValue(Port));
-                        mmSocket = Java.Lang.Object.GetObject<BluetoothSocket>(_socket, JniHandleOwnership.TransferLocalRef);
- 
-                        mmSocket.Connect();
-                        DoDeviceConnected();
-                    }
-                    catch (IOException connectException)
-                    {
-
-                        // Unable to connect; close the socket and get out
-                        try
-                        {
-                            mmSocket.Close();
-                        }
-                        catch (IOException closeException)
-                        {
-                            
-                        }
-                        DoDeviceConnectionFailed();
-                    }
                 }
 
+            }
+
+            if (!isConnected)
+            {
+                //METHOD C
+
+                try
+                {
+                    IntPtr createRfcommSocket = JNIEnv.GetMethodID(Device.Class.Handle, "createRfcommSocket", "(I)Landroid/bluetooth/BluetoothSocket;");
+                    IntPtr _socket = JNIEnv.CallObjectMethod(Device.Handle, createRfcommSocket, new global::Android.Runtime.JValue(Port));
+                    mmSocket = Java.Lang.Object.GetObject<BluetoothSocket>(_socket, JniHandleOwnership.TransferLocalRef);
+
+                    mmSocket.Connect();
+                    DoDeviceConnected();
+                }
+                catch (IOException connectException)
+                {
+
+                    // Unable to connect; close the socket and get out
+                    try
+                    {
+                        mmSocket.Close();
+                    }
+                    catch (IOException closeException)
+                    {
+
+                    }
+                    DoDeviceConnectionFailed();
+                }
             }
         }
 

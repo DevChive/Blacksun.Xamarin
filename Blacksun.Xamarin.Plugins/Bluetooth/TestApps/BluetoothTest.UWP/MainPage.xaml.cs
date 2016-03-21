@@ -41,7 +41,6 @@ namespace BluetoothTest.UWP
 
             if (listView.SelectedItem != null)
             {
-                progressRing.IsActive = true;
                 var item = listView.SelectedItem as IBluetoothDevice;
                 listView.SelectedItem = null;
                 if (item == null)
@@ -68,7 +67,6 @@ namespace BluetoothTest.UWP
                 }
                 finally
                 {
-                    progressRing.IsActive = false;
                 }
                 
                 

@@ -48,17 +48,11 @@ namespace Bluetooth.Plugin.Android
             CurrentUniqueIdentifier = uniqueIdentifier;
         }
 
-        public async Task Connect()
+        public Task Connect()
         {
-            await Connect(1);
-        }
-
-        public Task Connect(int port)
-        {
-
             var tc = new TaskCompletionSource<bool>();
 
-            var connThread = new ConnectThread(BluetoothDevice, port);
+            var connThread = new ConnectThread(BluetoothDevice);
 
             connThread.DeviceConnected += (o, t) =>
             {
@@ -78,7 +72,6 @@ namespace Bluetooth.Plugin.Android
             connThread.Run();
 
             return tc.Task;
-
         }
 
         public async Task Disconnect()

@@ -14,6 +14,7 @@ using Android.Views;
 using Android.Widget;
 using Bluetooth.Plugin.Android;
 using Plugin.Bluetooth.Abstractions;
+using Java.Util;
 
 namespace Plugin.Bluetooth
 {
@@ -66,6 +67,12 @@ namespace Plugin.Bluetooth
                 }
                 else
                 {
+
+                    if (btAdapter.IsDiscovering)
+                    {
+                        btAdapter.CancelDiscovery();
+                    }
+
                     // If there are paired devices, add each one to the ArrayAdapter 
                     if (pairedDevices.Count > 0)
                     {
@@ -74,34 +81,18 @@ namespace Plugin.Bluetooth
                         {
                             var device = new AndroidBluetoothDevice() { Name = paireddevice.Name, Address = paireddevice.Address };
                             device.BluetoothDevice = paireddevice;
-                            try
-                            {
-                                switch (paireddevice.Type)
-                                {
-                                    case global::Android.Bluetooth.BluetoothDeviceType.Classic:
-                                        device.Type = BluetoothDeviceType.Classic;
-                                        break;
-                                    case global::Android.Bluetooth.BluetoothDeviceType.Dual:
-                                        device.Type = BluetoothDeviceType.Dual;
-                                        break;
-                                    case global::Android.Bluetooth.BluetoothDeviceType.Le:
-                                        device.Type = BluetoothDeviceType.Le;
-                                        break;
-                                    case global::Android.Bluetooth.BluetoothDeviceType.Unknown:
-                                        device.Type = BluetoothDeviceType.Unknown;
-                                        break;
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-
-                            }
+                            
 
                             try
                             {
                                 device.BluetoothDevice.FetchUuidsWithSdp();
 
                                 var array = paireddevice.GetUuids();
+                                if(array == null)
+                                {
+                                    array = new ParcelUuid[1];
+                                    array[0] = new ParcelUuid(UUID.FromString("00001101-0000-1000-8000-00805f9b34fb"));
+                                }
                                 if (array != null)
                                 {
                                     var uuids = array.ToList();

@@ -49,13 +49,8 @@ namespace Plugin.Bluetooth
             DeviceInformationCollection DeviceInfoCollection
                 = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort));
 
-            //var pairedDevices = await DeviceInformation.FindAllAsync(selector);
-
             foreach (var deviceInfo in DeviceInfoCollection)
             {
-
-                //var _service = await RfcommDeviceService.FromIdAsync(deviceInfo.Id);
-
                 var device = new UWPBluetoothDevice() { Name = deviceInfo.Name, Address = string.Empty };
 
                 device.BluetoothDevice = deviceInfo;

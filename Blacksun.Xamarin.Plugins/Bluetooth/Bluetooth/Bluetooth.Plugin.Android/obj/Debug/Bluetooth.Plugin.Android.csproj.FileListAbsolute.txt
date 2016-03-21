@@ -15,3 +15,7 @@ C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Blueto
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\obj\Debug\uploadflags.txt
 C:\Users\angel\Documents\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\obj\Debug\Bluetooth.Plugin.Android.dll.mdb
 C:\Users\angel\Documents\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\bin\Debug\Bluetooth.Plugin.Android.dll.mdb
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\bin\Debug\Plugin.Bluetooth.Abstractions.dll.mdb
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\bin\Debug\Plugin.Bluetooth.dll.mdb
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\obj\Debug\Bluetooth.Plugin.Android.dll.mdb
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.Android\bin\Debug\Bluetooth.Plugin.Android.dll.mdb

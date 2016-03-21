@@ -17,3 +17,5 @@ C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Blueto
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\bin\Debug\Plugin.Bluetooth.Abstractions.dll
 C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\bin\Debug\Plugin.Bluetooth.Abstractions.pdb
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\bin\Debug\Plugin.Bluetooth.dll
+C:\Users\angel\Documents\GitHub\Blacksun.Xamarin\Blacksun.Xamarin.Plugins\Bluetooth\Bluetooth\Bluetooth.Plugin.UWP\bin\Debug\Plugin.Bluetooth.pdb

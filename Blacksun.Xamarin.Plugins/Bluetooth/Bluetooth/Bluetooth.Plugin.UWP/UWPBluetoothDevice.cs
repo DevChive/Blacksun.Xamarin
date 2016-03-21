@@ -7,6 +7,8 @@ using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 using Plugin.Bluetooth.Abstractions;
 using Plugin.Bluetooth.Abstractions.Exceptions;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Bluetooth.Plugin.UWP
 {
@@ -69,11 +71,15 @@ namespace Bluetooth.Plugin.UWP
 
         public async Task Connect()
         {
-            var tcs = new TaskCompletionSource<bool>();
+
 
             try
             {
-                _socket = new StreamSocket();
+                lock (this)
+                {
+                    _socket = new StreamSocket();
+                }
+
                 _service = await RfcommDeviceService.FromIdAsync(BluetoothDevice.Id);
                 await _socket.ConnectAsync(_service.ConnectionHostName, _service.ConnectionServiceName);
                 dataReader = new DataReader(_socket.InputStream);
@@ -83,11 +89,20 @@ namespace Bluetooth.Plugin.UWP
             }
             catch (Exception ex)
             {
-                Disconnect();
-                throw new BluetoothDeviceNotFoundException("Couldnt connect to " + Name);
+                switch ((uint)ex.HResult)
+                {
+                    case (0x80070490): // ERROR_ELEMENT_NOT_FOUND
+                        IsConnected = false;
+                        throw new Exception("Please verify that you are running the BluetoothRfcommChat server.");
+                        break;
+                    default:
+                        IsConnected = false;
+                        throw;
+                }
+
+
             }
-
-
+            
         }
 
 
@@ -97,16 +112,40 @@ namespace Bluetooth.Plugin.UWP
             try
             {
                 await _socket.CancelIOAsync();
-                _socket.Dispose();
-                _socket = null;
-                _service.Dispose();
-                _service = null;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                if(_socket != null)
+                {
+                    _socket.Dispose();
+                    _socket = null;
+                }
                 
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                if (_service != null)
+                {
+                    _service.Dispose();
+                    _service = null;
+                }
                 
             }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
             IsConnected = false;
 
         }
